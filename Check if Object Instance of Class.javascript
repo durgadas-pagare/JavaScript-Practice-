@@ -9,5 +9,15 @@ var checkIfInstanceOf = function(obj, classFunction) {
         return false;
     }
 
-    return obj instanceof classFunction;
+    let prototype = Object.getPrototypeOf(Object(obj));
+
+    while (prototype !== null) {
+        if (prototype === classFunction.prototype) {
+            return true;
+        }
+
+        prototype = Object.getPrototypeOf(prototype);
+    }
+
+    return false;
 };
