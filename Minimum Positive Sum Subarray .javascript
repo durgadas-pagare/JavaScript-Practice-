@@ -1,30 +1,25 @@
 
-class Solution {
-    public int minimumSumSubarray(List<Integer> nums, int l, int r) {
+var minimumSumSubarray = function(nums, l, r) {
+    let minSum = Infinity;
+    let n = nums.length;
 
-        int minSum = Integer.MAX_VALUE;
-        int n = nums.size();
+    for (let i = 0; i < n; i++) {
+        let sum = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (let j = i; j < n; j++) {
+            sum += nums[j];
 
-            int sum = 0;
+            let length = j - i + 1;
 
-            for (int j = i; j < n; j++) {
+            if (length >= l && length <= r && sum > 0) {
+                minSum = Math.min(minSum, sum);
+            }
 
-                sum += nums.get(j);
-
-                int length = j - i + 1;
-
-                if (length >= l && length <= r && sum > 0) {
-                    minSum = Math.min(minSum, sum);
-                }
-
-                if (length >= r) {
-                    break;
-                }
+            if (length >= r) {
+                break;
             }
         }
-
-        return minSum == Integer.MAX_VALUE ? -1 : minSum;
     }
-}
+
+    return minSum === Infinity ? -1 : minSum;
+};
