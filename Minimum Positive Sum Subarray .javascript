@@ -10,7 +10,7 @@ var minimumSumSubarray = function(nums, l, r) {
         for (let j = i; j < n; j++) {
             sum += nums[j];
 
-            
+    
 
             let length = j - i + 1;
 
