@@ -12,6 +12,7 @@ var minimumSumSubarray = function(nums, l, r) {
 
             let length = j - i + 1;
 
+
             if (length >= l && length <= r && sum > 0) {
                 minSum = Math.min(minSum, sum);
             }
