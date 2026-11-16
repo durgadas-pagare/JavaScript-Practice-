@@ -1,22 +1,19 @@
-class Solution {
-    public String digitSum(String s, int k) {
+var digitSum = function(s, k) {
+    while (s.length > k) {
+        let result = "";
 
-        while (s.length() > k) {
-            StringBuilder result = new StringBuilder();
+        for (let i = 0; i < s.length; i += k) {
+            let sum = 0;
 
-            for (int i = 0; i < s.length(); i += k) {
-                int sum = 0;
-
-                for (int j = i; j < Math.min(i + k, s.length()); j++) {
-                    sum += s.charAt(j) - '0';
-                }
-
-                result.append(sum);
+            for (let j = i; j < Math.min(i + k, s.length); j++) {
+                sum += Number(s[j]);
             }
 
-            s = result.toString();
+            result += sum;
         }
 
-        return s;
+        s = result;
     }
-}
+
+    return s;
+};
