@@ -7,7 +7,7 @@ class Solution {
         int[][] cost = new int[n][n];
 
         // Precompute the cost of making each substring
-        // a semi-palindrome.
+        // a semi-palindrome.  
         for (int len = 2; len <= n; len++) {
             for (int l = 0; l + len <= n; l++) {
                 int r = l + len - 1;
