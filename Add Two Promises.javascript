@@ -1,4 +1,4 @@
-
+  
 /**
  * @param {Promise<number>} promise1
  * @param {Promise<number>} promise2
