@@ -1,5 +1,5 @@
 
-var minDifference = function(nums) {
+var minimizeSum = function(nums) {
     const n = nums.length;
 
     if (n <= 3) {
